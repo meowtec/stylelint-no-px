@@ -1,6 +1,6 @@
 const stylelint = require('stylelint')
 const valueParser = require('postcss-value-parser')
-const ruleName = 'hm/prefer-rem'
+const ruleName = 'meowtec/no-px'
 
 const messages = stylelint.utils.ruleMessages(ruleName, {
   rem() {
