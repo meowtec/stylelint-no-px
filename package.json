@@ -1,0 +1,33 @@
+{
+  "name": "stylelint-no-px",
+  "version": "1.0.0",
+  "description": "A stylelint custom rule to ensure rem instead of px",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meowtec/stylelint-no-px.git"
+  },
+  "keywords": [
+    "stylelint",
+    "stylelint-plugin",
+    "css",
+    "px",
+    "rem"
+  ],
+  "author": "meowtec<bertonzh@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/meowtec/stylelint-no-px/issues"
+  },
+  "homepage": "https://github.com/meowtec/stylelint-no-px",
+  "devDependencies": {
+    "stylelint-test-rule-tape": "^0.2.0",
+    "tape": "^4.7.0"
+  },
+  "dependencies": {
+    "postcss-value-parser": "^3.3.0"
+  }
+}
