@@ -29,7 +29,7 @@ Add it to your stylelint config
   ],
   "rules": {
     // ...
-    "meowtec/no-px": [true, { "ignore": ["1px", "font"] }],
+    "meowtec/no-px": [true, { "ignore": ["1px"] }],
     // or just:
     "meowtec/no-px": true,
     // ...
