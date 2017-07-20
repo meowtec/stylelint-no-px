@@ -30,6 +30,8 @@ Add it to your stylelint config
   "rules": {
     // ...
     "meowtec/no-px": [true, { "ignore": ["1px", "font"] }],
+    // or just:
+    "meowtec/no-px": true,
     // ...
   }
 }
