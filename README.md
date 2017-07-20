@@ -1,6 +1,6 @@
 # stylelint-no-px
 
-![](https://travis-ci.org/meowtec/stylelint-no-px.svg?branch=master)
+![https://travis-ci.org/meowtec/stylelint-no-px](https://travis-ci.org/meowtec/stylelint-no-px.svg?branch=master)
 
 A stylelint custom rule to ensure rem instead of px
 

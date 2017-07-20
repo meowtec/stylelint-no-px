@@ -1,3 +1,5 @@
+'use strict'
+
 const stylelint = require('stylelint')
 const valueParser = require('postcss-value-parser')
 const ruleName = 'meowtec/no-px'
@@ -21,7 +23,7 @@ const propInList = (prop, list) => {
  * @param {string} value
  */
 const hasForbiddenPX = (node, options) => {
-  const { type } = node
+  const type = node.type
   const value = type === 'decl' ? node.value : node.params
 
   const parsed = valueParser(value)

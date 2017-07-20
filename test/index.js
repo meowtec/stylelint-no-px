@@ -1,3 +1,5 @@
+'use strict'
+
 const testRule = require('stylelint-test-rule-tape')
 const useRem = require('..')
 
