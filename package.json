@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/meowtec/stylelint-no-px",
   "devDependencies": {
+    "stylelint": "^8.0.0",
     "stylelint-test-rule-tape": "^0.2.0",
     "tape": "^4.7.0"
   },
