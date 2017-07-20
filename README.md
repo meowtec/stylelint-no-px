@@ -2,7 +2,7 @@
 
 ![https://travis-ci.org/meowtec/stylelint-no-px](https://travis-ci.org/meowtec/stylelint-no-px.svg?branch=master)
 
-A stylelint custom rule to ensure rem instead of px
+A stylelint custom rule to ensure rem instead of px.
 
 If you are using `rem` (instead of `px`) as **1px solution** or for other purposes, you should need a stylelint rule to enforce using rem. Thats it.
 
@@ -14,7 +14,7 @@ border: 1px solid #eee; // ok
 ## Installation
 
 ```
-npm install stylelint-no-px
+npm install stylelint-no-px --save-dev
 ```
 
 ## Usage
