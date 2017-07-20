@@ -27,7 +27,7 @@ const hasForbiddenPX = (node, options) => {
   const value = type === 'decl' ? node.value : node.params
 
   const parsed = valueParser(value)
-  let hasPx = false
+  let hasPX = false
 
   const ignore = options.ignore || defaultSecondaryOptions.ignore
   const ignore1px = ignore.indexOf('1px') > -1
@@ -42,18 +42,22 @@ const hasForbiddenPX = (node, options) => {
 
     let matched
     if (node.type === 'word' && (matched = node.value.match(/^(\d+(\.\d+)?)px$/))) {
-      // eg. 10px
       const px = matched[1]
-      if (ignore1px && px !== '1') {
-        hasPx = true
+
+      if (px === '0') {
+        return
+      }
+
+      if (px !== '1' || !ignore1px) {
+        hasPX = true
       }
     } else if (node.type === 'string' && /(@\{[\w-]+\})px\b/.test(node.value)) {
       // eg. ~'@{width}px'
-      hasPx = true
+      hasPX = true
     }
   })
 
-  return hasPx
+  return hasPX
 }
 
 module.exports = stylelint.createPlugin(ruleName, (primaryOption, secondaryOptionObject) => {
