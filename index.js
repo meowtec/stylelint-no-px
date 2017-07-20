@@ -14,8 +14,19 @@ const defaultSecondaryOptions = {
   ignore: [ '1px' ]
 }
 
+const post1px = /\s+1px/
+
 const propInList = (prop, list) => {
-  return prop && list.some(item => prop.indexOf(item) > -1)
+  return prop && list.some(item => {
+    return !post1px.test(item) && prop.indexOf(item) > -1
+  })
+}
+
+const propAdd1pxInList = (prop, list) => {
+  return prop && list.some(item => {
+    if (!post1px.test(item)) return
+    return prop.indexOf(item.replace(post1px, '')) > -1
+  })
 }
 
 /**
@@ -25,6 +36,7 @@ const propInList = (prop, list) => {
 const hasForbiddenPX = (node, options) => {
   const type = node.type
   const value = type === 'decl' ? node.value : node.params
+  const prop = type === 'decl' ? node.prop : null
 
   const parsed = valueParser(value)
   let hasPX = false
@@ -48,7 +60,12 @@ const hasForbiddenPX = (node, options) => {
         return
       }
 
-      if (px !== '1' || !ignore1px) {
+      if (px !== '1') {
+        hasPX = true
+        return
+      }
+
+      if (!propAdd1pxInList(prop, ignore) && !ignore1px) {
         hasPX = true
       }
     } else if (node.type === 'string' && /(@\{[\w-]+\})px\b/.test(node.value)) {
