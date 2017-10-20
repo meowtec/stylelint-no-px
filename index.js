@@ -48,7 +48,7 @@ const hasForbiddenPX = (node, options) => {
 
   parsed.walk(node => {
     // if node is `url(xxx)`, prevent the traversal
-    if (node.type === 'function' && node.value === 'url') {
+    if (node.type === 'function') {
       return false
     }
 
