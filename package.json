@@ -1,6 +1,6 @@
 {
   "name": "stylelint-no-px",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "description": "A stylelint custom rule to ensure using rem instead of px",
   "main": "index.js",
   "scripts": {
