@@ -39,9 +39,15 @@ Add it to your stylelint config
 
 ## Options
 
-Use `ignore: Item[]` to skip-over value check.
+### ignore: Item[]
+
+ignore value check.
 
 Valid value of Item: `propertyName` | `'1px'` | `'${propertyName} 1px'`
+
+### ignoreFunctions: string[]
+
+ignore check for functions.
 
 ### example(1) (the default options)
 
@@ -64,8 +70,9 @@ Valid value of Item: `propertyName` | `'1px'` | `'${propertyName} 1px'`
 ### example(2)
 
 ```javascript
-// all `1px` or `font` is ok
-"meowtec/no-px": [true, { "ignore": ["1px", "font"] }],
+//  - all `1px` or `font` is ok
+//  - rem(Npx) is ok
+"meowtec/no-px": [true, { "ignore": ["1px", "font"], "ignoreFunctions": ["rem"] }],
 ```
 
 ```less
@@ -74,6 +81,8 @@ Valid value of Item: `propertyName` | `'1px'` | `'${propertyName} 1px'`
   height: 1px; // ok
   font-size: 24px; // ok
   padding: 10px; // error
+  width: calc(100% - 10px); // error
+  font-size: rem(10px); // ok
 }
 ```
 
