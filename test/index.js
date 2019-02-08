@@ -28,6 +28,11 @@ const defaultTest = {
       column: 8,
     },
     {
+      code: '.foo { margin-left: +10px; }',
+      line: 1,
+      column: 8,
+    },
+    {
       code: '@width: 1;\n.foo { border-width: ~\'@{width}px solid #333\'; }',
       line: 2,
       column: 8,
