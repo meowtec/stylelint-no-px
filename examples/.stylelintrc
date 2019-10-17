@@ -1,0 +1,8 @@
+{
+  "plugins": [
+    "stylelint-no-px"
+  ],
+  "rules": {
+    "meowtec/no-px": [true],
+  }
+}
