@@ -53,6 +53,27 @@ testRule(useRem.rule, Object.assign({}, defaultTest, {
   config: true,
 }))
 
+// always ignore media query
+testRule(useRem.rule, {
+  ruleName: useRem.ruleName,
+
+  config: [true, {ignore: []}],
+
+  skipBasicChecks: true,
+
+  accept: [
+    { code: '.a { @media screen and (max-width: 370px) {} }' },
+  ],
+
+  reject: [
+    {
+      code: '.a { \n@media screen and (max-width: 370px) { \npadding: 10px; } }',
+      line: 3,
+      column: 1,
+    },
+  ],
+})
+
 // all
 testRule(useRem.rule, {
   ruleName: useRem.ruleName,
