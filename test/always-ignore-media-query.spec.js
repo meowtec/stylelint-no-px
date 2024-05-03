@@ -13,7 +13,7 @@ testRule({
     reject: [
         {
             code: '.a { \n@media screen and (max-width: 370px) { \npadding: 10px; } }',
-            message: messages.rem(),
+            message: messages.rem(null),
             line: 3,
             column: 1,
             endLine: 3,

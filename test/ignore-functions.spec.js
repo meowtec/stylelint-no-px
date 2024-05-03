@@ -11,9 +11,10 @@ testRule({
     reject: [
         {
             code: '.foo { width: calc(100% - 12px); }',
-            message: messages.rem(),
+            message: messages.rem(null),
             line: 1,
             column: 8,
+            only: true,
         },
     ],
 })

@@ -11,13 +11,13 @@ testRule({
     reject: [
         {
             code: '.foo { border-top: 2px solid #ccc; }',
-            message: messages.rem(),
+            message: messages.rem(null),
             line: 1,
             column: 8,
         },
         {
             code: '.foo { padding: 1px; }',
-            message: messages.rem(),
+            message: messages.rem(null),
             line: 1,
             column: 8,
         },
