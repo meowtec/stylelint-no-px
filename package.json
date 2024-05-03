@@ -3,8 +3,9 @@
   "version": "1.0.1",
   "description": "A stylelint custom rule to ensure using rem instead of px",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "tape test"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "files": [
     "LICENSE",
@@ -30,14 +31,19 @@
   },
   "homepage": "https://github.com/meowtec/stylelint-no-px",
   "devDependencies": {
-    "stylelint": "^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0",
-    "stylelint-test-rule-tape": "^0.2.0",
-    "tape": "^4.7.0"
+    "jest": "^29.7.0",
+    "jest-preset-stylelint": "^7.0.0",
+    "stylelint": "^16.0.0"
   },
   "dependencies": {
-    "postcss-value-parser": "^3.3.0 || ^4.0.2"
+    "postcss-value-parser": "^4.2.0"
   },
   "peerDependencies": {
-    "stylelint": ">= 8"
+    "stylelint": ">= 16"
+  },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/jest.setup.js"
+    ]
   }
 }
