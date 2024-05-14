@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "stylelint ./src"
+    "lint": "stylelint ./src",
+    "lint:fix": "stylelint ./src --fix"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "stylelint": "^11.1.1",
-    "stylelint-no-px": "^1.0.0"
+    "stylelint": "^16.5.0",
+    "stylelint-no-px": "file:../"
   }
 }
