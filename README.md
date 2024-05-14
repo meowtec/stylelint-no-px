@@ -47,7 +47,11 @@ Valid value of Item: `propertyName` | `'1px'` | `'${propertyName} 1px'`
 
 ### ignoreFunctions: string[]
 
-ignore check for functions.
+Ignore check for functions.
+
+### remSize: number
+
+Specify a base size for converting px to rem. If this option is provided, the plugin will automatically convert pixel values to rem using the provided base size.
 
 ### example(1) (the default options)
 
@@ -97,5 +101,18 @@ ignore check for functions.
 .foo {
   border-top: 1px solid #ccc; // ok
   height: 1px; // error
+}
+```
+
+### example(4)
+
+```javascript
+// only `border + 1px` is ok
+"meowtec/no-px": [true, { "ignore": ["1px"], "remSize": 16 }],
+```
+
+```less
+.foo {
+  height: 16px; // error, auto converts to 1rem
 }
 ```
